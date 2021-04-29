@@ -10,6 +10,7 @@ app.use(express.static('public'))
 app.get('/init', (req, res) => {
     let devices = db.get('devices').value();
     res.send(JSON.stringify({ devices: devices }));
+
 })
 
 app.get('/stream', sse.init);
